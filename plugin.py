@@ -37,9 +37,6 @@ class zukonSelector(Screen):
 		<ePixmap pixmap="skin_default/buttons/key_menu.png" position="550,517" size="40,40" alphatest="on" />
 		<widget name="key_red" position="45,510" zPosition="1" size="125,40" font="Regular;14" halign="center" valign="left" backgroundColor="transpBlack" transparent="1" />
 		<widget name="key_green" position="175,510" zPosition="1" size="125,40" font="Regular;14" halign="center" valign="left" backgroundColor="transpBlack" transparent="1" />
-		<!--widget name="key_yellow" position="305,510" zPosition="1" size="125,40" font="Regular;14" halign="center" valign="left" backgroundColor="transpBlack" transparent="1" />
-		<widget name="key_blue" position="435,510" zPosition="1" size="125,40" font="Regular;14" halign="center" valign="left" backgroundColor="transpBlack" transparent="1" />
-		<widget name="key_menu" position="565,510" zPosition="1" size="125,40" font="Regular;14" halign="center" valign="left" backgroundColor="transpBlack" transparent="1" /-->
 	</screen>"""
 
 	def __init__(self, session):
@@ -58,17 +55,12 @@ class zukonSelector(Screen):
 		self.setSystemName()
 		self["imageList"] = MenuList(self.systemsName)
 		self["key_red"] = Button(_("Exit"))
-		self["key_green"] = Button(_("Uruchom"))
-		self["key_yellow"] = Button(_("Fake zolty"))
-		self["key_blue"] = Button(_("Fake niebieski"))
-		self["key_menu"] = Button(_("Menu"))
+		self["key_green"] = Button(_("Boot"))
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 		{
 			"cancel": self.cancel,
 			"red": self.cancel,
 			"green": self.runSys,
-			"yellow": self.cancel,
-			"blue": self.cancel,
 		}, -2)
 	
 	def listDisk(self, zadane):
